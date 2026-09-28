@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-paper font-body text-sm text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading font-light tracking-tight;
+  }
+
+  a,
+  button {
+    @apply transition-colors;
+  }
+
+  /* INTERACTIONS.md: фокус — outline в цвете акцента */
+  :focus-visible {
+    outline: 2px solid #a7325f;
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    @apply bg-accent text-paper;
+  }
+}
+
+@layer components {
+  .container-shop {
+    @apply mx-auto w-full max-w-container px-4 md:px-8 xl:px-10;
+  }
+
+  /* Вертикальный ритм секций: 64px mobile / 128px desktop */
+  .section {
+    @apply py-16 lg:py-32;
+  }
+
+  /* Подчёркивание, вырастающее слева направо */
+  .link-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:scale-x-100;
+  }
+
+  /* INTERACTIONS.md: hover ссылок → акцент */
+  .link-hover {
+    @apply transition-colors hover:text-accent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
