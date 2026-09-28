@@ -53,6 +53,12 @@ hooks/          use-local-storage, use-recently-viewed
 Акцент `#a7325f` используется точечно. Вторичный текст — `#6e6e6e` / `#6c757d` (оттенки из той же палитры,
 проходящие WCAG AA; исходные `#8d8d8d` / `#999999` давали контраст 3.3:1 и 2.9:1).
 
+## Деплой
+
+Абсолютный URL сайта (canonical, og, sitemap, JSON-LD) берётся из `NEXT_PUBLIC_SITE_URL`,
+а на Vercel — автоматически из продакшн-домена (`VERCEL_PROJECT_PRODUCTION_URL`).
+Для своего домена задайте `NEXT_PUBLIC_SITE_URL=https://ваш-домен` в настройках проекта Vercel.
+
 ## Данные и моки
 
 - Фото — Unsplash, каждое проверено вручную (`data/images.ts`). Если фото не загрузится, `SafeImage` покажет плейсхолдер.

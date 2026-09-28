@@ -1,8 +1,19 @@
+/**
+ * Абсолютный URL сайта для canonical, og-тегов, sitemap и JSON-LD (всё — на сервере при сборке).
+ * 1) NEXT_PUBLIC_SITE_URL — свой домен; 2) продакшн-домен Vercel (системная переменная);
+ * 3) локальная разработка.
+ */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:3000');
+
 export const siteConfig = {
   name: 'AzaFlowers',
   description:
     'Авторские букеты и живые цветы с доставкой по Астане за 1 час. Свежие розы, пионы, композиции в коробках и подарки.',
-  url: 'https://azaflowers.example',
+  url: siteUrl,
   city: 'Астана',
   phone: '+7 (777) 123-45-67',
   phoneHref: 'tel:+77771234567',
