@@ -3,6 +3,8 @@
 Next.js 14 (App Router) · TypeScript · Tailwind CSS · shadcn/ui (Radix) · Framer Motion · lucide-react · react-hook-form + zod.
 Визуальная система основана на извлечённой дизайн-системе bukettery (`../DESIGN.md`, `../screens/`) в минималистичной редакции.
 
+**Сайт:** https://azaflowers-shop.vercel.app
+
 ## Запуск
 
 ```bash
@@ -54,6 +56,9 @@ hooks/          use-local-storage, use-recently-viewed
 проходящие WCAG AA; исходные `#8d8d8d` / `#999999` давали контраст 3.3:1 и 2.9:1).
 
 ## Деплой
+
+Проект `azaflowers-shop` на Vercel подключён к этому репозиторию:
+push в `main` → продакшен-деплой, push в любую другую ветку → preview-ссылка.
 
 Абсолютный URL сайта (canonical, og, sitemap, JSON-LD) берётся из `NEXT_PUBLIC_SITE_URL`,
 а на Vercel — автоматически из продакшн-домена (`VERCEL_PROJECT_PRODUCTION_URL`).
